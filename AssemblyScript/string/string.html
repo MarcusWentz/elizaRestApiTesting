@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WASM Auto Test</title>
+</head>
+<body>
+  <h1>WASM Auto Test with `instantiateStreaming`</h1>
+  <p id="output">Loading...</p>
+
+  <script>
+    // Function to load and test the WASM file
+    async function loadAndTestWasm() {
+      try {
+        // Load and instantiate the WASM file
+        const { instance } = await WebAssembly.instantiateStreaming(fetch('string.wasm'));
+
+        const debugString = "Z";
+        console.log(debugString);
+
+        document.getElementById('output').textContent = debugString;
+
+        // Access the WASM exports and call the `add` function
+        const testString = instance.exports.testString;
+        const result = testString();
+
+        console.log(result);
+        // Display the result on the page
+        document.getElementById('output').textContent = `Result: ${result}`;
+        
+
+        // // Display the result on the page
+        // document.getElementById('output').textContent = restApiPostRequest();
+      } catch (err) {
+        // Handle errors and display them on the page
+        document.getElementById('output').textContent = `Error: ${err.message}`;
+      }
+    }
+
+    // Automatically load and test the WASM file on page load
+    loadAndTestWasm();
+  </script>
+</body>
+</html>

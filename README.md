@@ -21,3 +21,11 @@ the following npm package is used instead:
 const axios = require('axios');
 ```
 since axios is a popular REST API package.
+
+## WASM Testing
+
+HTML files can run WASM files for testing. Try with:
+```shell
+npx http-server
+```
+and select an HTML that loads a WASM file. 

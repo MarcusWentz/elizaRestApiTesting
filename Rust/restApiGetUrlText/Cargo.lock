@@ -257,7 +257,6 @@ name = "hello-wasm"
 version = "0.1.0"
 dependencies = [
  "reqwest",
- "tokio",
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "web-sys",

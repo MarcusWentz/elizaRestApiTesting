@@ -259,6 +259,8 @@ dependencies = [
  "reqwest",
  "tokio",
  "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "web-sys",
 ]
 
 [[package]]

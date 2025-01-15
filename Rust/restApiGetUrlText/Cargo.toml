@@ -10,3 +10,5 @@ crate-type = ["cdylib"]
 reqwest = "0.12.12"
 tokio = "1.43.0"
 wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4.50"
+web-sys = { version = "0.3.77", features = ["console"] }
